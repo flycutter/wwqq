@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2013 SONY SmartWatch 2 Hackthon</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+$(function(){
+$('body').append('<div class="hidden_shadow"></div>');
+
+$('.hidden_box').append('<div class="close"></div>');
+
+
+$('.js-open-hidden').click(function(){
+$('.hidden_box').hide();
+$('.hidden_shadow').show();
+var _showid = $(this).attr('data-rel');
+$('#'+_showid).show();
+return false;
+});
+
+$('.hidden_shadow ,.hidden_box .close').click(function(){
+$('.hidden_box ,.hidden_shadow').hide();
+});
+
+});
+$(function(){
+$.imgFromToleft=function(obj){
+obj.animate({left:0},800);
+};
+$.imgToright=function(obj){
+obj.animate({left:"460px"},800).animate({left:"-460px"},0);
+};
+var i=1;
+$.numberRound=function(subTime){
+setTimeout(function(){
+if(i==6){
+i=0;
+};
+if(i>0){
+$.imgToright($('.summary_left img').eq(i-1));
+}else{
+$.imgToright($('.summary_left img').eq(5));
+}
+$.imgFromToleft($('.summary_left img').eq(i));
+i++;
+$.numberRound(subTime);
+},subTime);
+};
+$.numberRound(4000);
+});
+</script>
+
+</head>
+
+<body>
+<div class="header">
+<div class="warp">
+<a class="logo" href="https://code.csdn.net">CODE</a>
+<span class="user_login">
+<a href="https://code.csdn.net/single_sign_on/login">登录</a>
+<a href="https://passport.csdn.net/account/register?from=https://code.csdn.net/language">注册</a>
+</span>
+</div>
+</div>
+<div class="content">
+<div class="banner"></div>
+<div class="summary">
+<div class="summary_left">
+<ul class="imglist">
+<li><img src="images/photo06-0.jpg" alt="Coding For Fun 大合影" style="left:0"/></li>
+<li><img src="images/photo06-1.jpg" alt="大赛评委" /></li>
+<li><img src="images/photo06-2.jpg" alt="获最佳应用奖团队"/></li>
+<li><img src="images/photo06-4.jpg" alt="获最佳实现奖团队"/></li>
+<li><img src="images/photo06-f.jpg" alt="获最佳设计奖团队"/></li>
+<li><img src="images/photo06-25.jpg" alt="获最佳设计奖团队"/></li>
+</ul>
+</div>
+<div class="summary_right">
+<p class="sj"> 2013年11月13日-14日，在由CSDN和创新工场联合主办的MDCC大会上，索尼与CSDN联合举办了“New way of thinking——索尼SmartWatch 2应用开发马拉松大赛”。SmartWatch 2是索尼公司不久前发布的第二代可穿戴式计算设备，该设备基于基于Android操作系统，开发者可以利用标准的Android与索尼的SDK，为该设备开发出可与Xperia智能手机等索尼Android设备相连的创新性应用。</p>
+<p class="sj">本次大赛邀请了来自全国各地的近80位开发者参与，大赛要求选手们在32小时的时间内完成一个完整的基于SmartWatch 2的应用。参赛者们吃在现场、休息在现场，与代码同在，最终通过自己的刻苦努力，产出了获得与会嘉宾的一致好评的优秀应用。<a href="http://www.csdn.net/article/2013-11-13/2817462" target="_blank" >点击查看更多报道</a></p>
+</div>
+</div>
+<div class="praise">
+<div class="p_topbg"></div>
+<div class="p_main">
+<div class="pImg">
+<img src="images/praise.png" alt="获奖名单" />
+</div>
+<div class="pList">
+<p>大赛邀请到了索尼移动智能设备全球技术总监Göran Andersson、索尼移动创新设计及产品企划中心用户界面设计部门经理刘静、创投圈创始人兼CEO 李晓宁、支付宝资深经理王卫星（祝枝山）及《快乐妈咪》创始人陶建辉作大赛评委。评出以下奖项：
+</p>
+<ul class="pList_left">
+<li><strong>2号团队“Smart Show”</strong>--防丢应用获得最佳应用奖（奖金：20000元）</li>
+<li><strong>21号团队“Supreme”</strong>--“借口电话”获得最佳创意奖（奖金：10000元）</li>
+<li><strong>22号团队“Sunrise”</strong>--“飞机大战”获得最佳设计奖（奖金：10000元）</li>
+</ul>
+</div>
+</div>
+<div class="p_bottombg"></div>
+</div>
+<div class="ItemShow">
+<h2></h2>
+<div class="ItemShow_left">
+<dl>
+<dt><img src="images/mtu.gif" alt="手机导航辅助" /></dt>
+<dd>
+<strong>手机导航辅助</strong>
+<p class="addP">导航类应用：在手机端实现导航地图，用户点击导航按钮，则向手表端发送导航信息，包括位置，方向和距离。手表端可以浏览当前导航信息，也可以浏览下一条，上一条。
+<p>【<a href="https://code.csdn.net/abe_ywang/SmartCompass_SonyHack">CODE托管地址</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu02.jpg" alt="智能防丢" /></dt>
+<dd>
+<strong>智能防丢</strong>
+<p class="addP">针对健忘，出门不小心的人的防丢应用。不只是手机，可以防止电脑，手机，公交卡，小孩，甚至是宠物的丢失。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/2-smart%20show-%E9%98%B2%E4%B8%A2%E5%99%A8.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu03.jpg" alt="位置信息分享" /></dt>
+<dd>
+<strong>位置信息分享</strong>
+<p class="addP">朋友亲人之间分享位置信息，便于掌握朋友动态，安全，方便。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/3-sony.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu04.jpg" alt="分歧终端机" /></dt>
+<dd>
+<strong>分歧终端机</strong>
+<p class="addP">当用户遇到选择而纠结时，可以通过本软件把可选项录入并让本软件进行随机选择。
+<p>【<a href="https://code.csdn.net/liuwei000000/smart_show-sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/4.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu05.jpg" alt="天气穿衣" /></dt>
+<dd>
+<strong>天气穿衣</strong>
+<p class="addP">根据天气情况和用户喜好，为他推荐合适的着装，特殊天气穿衣预警
+<p>【<a href="https://code.csdn.net/coppynight/smartbjtu-sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/5-Smart%20BJTU--Smart%20Watch2.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl class="no_bor">
+<dt><img src="images/tu06.jpg" alt="感光小贴士" /></dt>
+<dd>
+<strong>感光小贴士</strong>
+<p class="addP">感光小贴士：针对目前光污染进行一个监测和建议提示，监测目前光值，反馈防护措施。</p>
+<p>【<a href="https://code.csdn.net/u012654051/LightSensor_sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/6.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/mtu.gif" alt="Baby Card" /></dt>
+<dd>
+<strong>Baby Card</strong>
+<p class="addP">儿童可以pp通过喜欢的、感兴趣的卡片早早的认识字，父母可以对孩子轻松简单的早教。
+<p>【<a href="https://code.csdn.net/XinxinLOVELinlin/x_love_sonyhack">CODE托管地址</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu08.jpg" alt="我是大厨师" /></dt>
+<dd>
+<strong>我是大厨师</strong>
+<p class="addP">辅助那些不会做饭菜的人,让他们亲手制作出自己所烧制的饭菜,让即使是一个没有一点厨艺基础的人也会制作出一道美味可口的饭菜.
+<a href="#" class="js-open-hidden" data-rel="hidden08">详情</a></p>
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/8-%EF%BC%88%E8%91%A3%E5%AE%8F%E5%AE%87%EF%BC%89%E7%96%AF%E7%8B%82%E7%9A%84%E9%94%AE%E7%9B%98SmartWatch2%E6%BC%94%E8%AE%B2%E7%A8%BF.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu09.jpg" alt="电影梦工厂" /></dt>
+<dd>
+<strong>电影梦工厂</strong>
+<p class="addP">电影作为一种百年的艺术形式，改变着人类的精神世界。通过图文并茂的介绍来引导影迷走入细腻与情绪完美结合的放映室。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/9.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu10.jpg" alt="Lose Weight" /></dt>
+<dd>
+<strong>Lose Weight</strong>
+<p class="addP">提供各种各样的减肥方案，帮助那些想减肥的人随时减肥,不用害怕饮食问题。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/10--retror.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+</div>
+<div class="ItemShow_right">
+<dl>
+<dt><img src="images/tu11.jpg" alt="记忆助手" /></dt>
+<dd>
+<strong>记忆助手</strong>
+<p class="addP">在大家无聊的时候，让大家通过小句子来快乐，通过小句子帮助学生学习等等。
+<p>【<a href="https://code.csdn.net/u010035081/HIBOOK-sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/11_%E9%9B%B6%E5%BA%A6%E6%99%BA%E8%81%94.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu12.jpg" alt="快递单提醒服务" /></dt>
+<dd>
+<strong>快递单提醒服务</strong>
+<p class="addP">随身查快递，再也不用总掏手机查快递了，一个APP,国内百分之八十快递全兼容。一次添加，多订单同时跟踪。人性化设置，6套主题随你换。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/12.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu13.jpg" alt="谁是卧底" /></dt>
+<dd>
+<strong>谁是卧底</strong>
+<p class="addP">根据湖南卫视"谁是卧底",进行创意设计。将平台转移到手表上。游戏适合同学同事聚会后，参与娱乐。省略了纸质卡片的繁琐。
+<p>【<a href="https://code.csdn.net/Coding_For_Fun/SDCC2013_Coding_For_Fun/tree/master/letsgo.pptx">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu14.jpg" alt="行程小助手" /></dt>
+<dd>
+<strong>行程小助手</strong>
+<p class="addP">安排行程，通过天气状况提醒做行程的准备。
+<p>【<a href="https://code.csdn.net/flyme2012/Flame-snoy_hack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/14-Flame.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu16.jpg" alt="打飞机游戏" /></dt>
+<dd>
+<strong>打飞机游戏</strong>
+<p class="addP">微信中类似的打飞机的游戏，可能重力控制，这样玩家在累时正好可以通过活动胳膊来玩游戏，这样娱乐与运动相结合，有益身心健康。
+<p>【<a href="https://code.csdn.net/wzylangjitianya/PlaneWatch_sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/16--%E4%B8%83%E5%B7%A7%E6%9D%BF.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/mtu.gif" alt="遥控播放投影片" /></dt>
+<dd>
+<strong>遥控播放投影片</strong>
+<p class="addP">利用手机控制PC上PPT的播放，并且将PPT上的相关信息以一个通知类的方式发送到SW上。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/mtu.gif" alt="手表摇摇乐" /></dt>
+<dd>
+<strong>手表摇一摇</strong>
+<p class="addP">1、一款由手表控制，手机作为显示屏幕的体感、跑酷类游戏。2、手表摇一摇，手机切歌
+<p>【<a href="https://code.csdn.net/godha/Tusiz_sonyhack">CODE托管地址</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu19.jpg" alt="Only Phone" /></dt>
+<dd>
+<strong>Only Phone</strong>
+<p class="addP">通过您提前设置好的有序点击屏幕，拨打相对应的电话。
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/19号.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu20.jpg" alt="电子宠物" /></dt>
+<dd>
+<strong>电子宠物</strong>
+<p class="addP">基于体感器运动的电子宠物游戏
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/20-%E5%A4%A7%E6%B5%B7.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl>
+<dt><img src="images/tu21.jpg" alt="借口电话" /></dt>
+<dd>
+<strong>借口电话</strong>
+<p class="addP">面对生活中的小尴尬，给你一个暂时离开的借口，通过手表按键，模拟电话响起，给你个理由说“不好意思，我出去接个电话。”
+<p>【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/21.pdf">查看演示文档</a>】</p>
+</dd>
+</dl>
+<dl class="no_bor">
+<dt><img src="images/mtu.gif" alt="飞机大战" /></dt>
+<dd>
+<strong>飞机大战</strong>
+<p class="addP">手表作为一个遥控，捕捉上下左右的位置信息，作为输入，控制手机内飞机的行动。
+<p>【<a href="https://code.csdn.net/program_thinker/sunrise-sonyhack">CODE托管地址</a>】【<a href="https://code.csdn.net/tonghuix/sony-hack/tree/master/22-Sunrise-SmartPlane%20.pdf">查看演示文档</a>】
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="footer"> Copyright &copy 2013, CSDN.NET, All Rights Reserved </div>
+
+</body>
+</html>
